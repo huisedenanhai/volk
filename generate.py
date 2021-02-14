@@ -17,6 +17,7 @@ def parse_xml(path):
 
 
 def patch_file(path, blocks):
+<<<<<<< HEAD
     result = []
     block = None
 
@@ -41,6 +42,31 @@ def patch_file(path, blocks):
         for line in result:
             file.write(line)
 
+=======
+	result = []
+	block = None
+
+	with open(path, 'r') as file:
+		for line in file.readlines():
+			if block:
+				if line == block:
+					result.append(line)
+					block = None
+			else:
+				result.append(line)
+                                # C comment marker
+				if line.strip().startswith('/* VOLK_GENERATE_'):
+					block = line
+					result.append(blocks[line.strip()[17:-3]])
+                                # Shell/CMake comment marker
+				elif line.strip().startswith('# VOLK_GENERATE_'):
+					block = line
+					result.append(blocks[line.strip()[16:]])
+
+	with open(path, 'w', newline='\n') as file:
+		for line in result:
+			file.write(line)
+>>>>>>> 9ed4716ece718c990475e883abe00f4d8fed6733
 
 def is_descendant_type(types, name, base):
     if name == base:
