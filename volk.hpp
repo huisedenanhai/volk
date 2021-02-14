@@ -7,17 +7,22 @@
 #define VOLK_NAMESPACE volk
 #endif
 
-namespace VOLK_NAMESPACE
-{
-    class Device
-    {
-    public:
-        Device(VkDevice device) : _device(device)
-        {
-            volkLoadDeviceTable(&_table, device);
-        }
+namespace VOLK_NAMESPACE {
+class Device {
+public:
+  Device(VkDevice device) : _device(device) {
+    volkLoadDeviceTable(&_table, device);
+  }
 
-        /* VOLK_GENERATE_DEVICE_METHOD_HPP */
+  inline VkDevice device() const {
+    return _device;
+  }
+
+  inline const VolkDeviceTable &table() const {
+    return _table;
+  }
+
+  /* VOLK_GENERATE_DEVICE_METHOD_HPP */
 #if defined(VK_VERSION_1_0)
 		inline VkResult AllocateCommandBuffers(const VkCommandBufferAllocateInfo* pAllocateInfo, VkCommandBuffer* pCommandBuffers) const {
 			return _table.vkAllocateCommandBuffers(_device, pAllocateInfo, pCommandBuffers);
@@ -1173,11 +1178,11 @@ namespace VOLK_NAMESPACE
 			return _table.vkAcquireNextImage2KHR(_device, pAcquireInfo, pImageIndex);
 		}
 #endif /* (defined(VK_KHR_device_group) && defined(VK_KHR_swapchain)) || (defined(VK_KHR_swapchain) && defined(VK_VERSION_1_1)) */
-        /* VOLK_GENERATE_DEVICE_METHOD_HPP */
-    private:
-        VkDevice _device;
-        VolkDeviceTable _table;
-    };
+  /* VOLK_GENERATE_DEVICE_METHOD_HPP */
+private:
+  VkDevice _device;
+  VolkDeviceTable _table;
+};
 } // namespace VOLK_NAMESPACE
 
 #endif
