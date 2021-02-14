@@ -67,7 +67,7 @@ def get_param_declare(param):
 def cpp_method(name, cmd):
     args = [(get_param_declare(a), a.findtext('name'))
             for a in cmd.findall('param')]
-    ret_val = cmd.findtext('proto/type')
+    ret_val = cmd.findtext('proto/type').strip()
 
     first_arg_type = cmd.findtext('param[1]/type')
     if first_arg_type == 'VkDevice':
@@ -78,6 +78,9 @@ def cpp_method(name, cmd):
         call = ', '.join([a[1] for a in args])
 
     body = f"_table.{name}({call});"
+
+    if ret_val != 'void':
+        body = 'return ' + body
 
     return f'\t\tinline {ret_val} {name[2:]}({declare}) const {{\n\t\t\t{body}\n\t\t}}\n'
 

@@ -21,27 +21,27 @@ namespace VOLK_NAMESPACE
 #if defined(VK_VERSION_1_0)
         inline VkResult AllocateCommandBuffers(const VkCommandBufferAllocateInfo *pAllocateInfo, VkCommandBuffer *pCommandBuffers) const
         {
-            _table.vkAllocateCommandBuffers(_device, pAllocateInfo, pCommandBuffers);
+            return _table.vkAllocateCommandBuffers(_device, pAllocateInfo, pCommandBuffers);
         }
         inline VkResult AllocateDescriptorSets(const VkDescriptorSetAllocateInfo *pAllocateInfo, VkDescriptorSet *pDescriptorSets) const
         {
-            _table.vkAllocateDescriptorSets(_device, pAllocateInfo, pDescriptorSets);
+            return _table.vkAllocateDescriptorSets(_device, pAllocateInfo, pDescriptorSets);
         }
         inline VkResult AllocateMemory(const VkMemoryAllocateInfo *pAllocateInfo, const VkAllocationCallbacks *pAllocator, VkDeviceMemory *pMemory) const
         {
-            _table.vkAllocateMemory(_device, pAllocateInfo, pAllocator, pMemory);
+            return _table.vkAllocateMemory(_device, pAllocateInfo, pAllocator, pMemory);
         }
         inline VkResult BeginCommandBuffer(VkCommandBuffer commandBuffer, const VkCommandBufferBeginInfo *pBeginInfo) const
         {
-            _table.vkBeginCommandBuffer(commandBuffer, pBeginInfo);
+            return _table.vkBeginCommandBuffer(commandBuffer, pBeginInfo);
         }
         inline VkResult BindBufferMemory(VkBuffer buffer, VkDeviceMemory memory, VkDeviceSize memoryOffset) const
         {
-            _table.vkBindBufferMemory(_device, buffer, memory, memoryOffset);
+            return _table.vkBindBufferMemory(_device, buffer, memory, memoryOffset);
         }
         inline VkResult BindImageMemory(VkImage image, VkDeviceMemory memory, VkDeviceSize memoryOffset) const
         {
-            _table.vkBindImageMemory(_device, image, memory, memoryOffset);
+            return _table.vkBindImageMemory(_device, image, memory, memoryOffset);
         }
         inline void CmdBeginQuery(VkCommandBuffer commandBuffer, VkQueryPool queryPool, uint32_t query, VkQueryControlFlags flags) const
         {
@@ -221,79 +221,79 @@ namespace VOLK_NAMESPACE
         }
         inline VkResult CreateBuffer(const VkBufferCreateInfo *pCreateInfo, const VkAllocationCallbacks *pAllocator, VkBuffer *pBuffer) const
         {
-            _table.vkCreateBuffer(_device, pCreateInfo, pAllocator, pBuffer);
+            return _table.vkCreateBuffer(_device, pCreateInfo, pAllocator, pBuffer);
         }
         inline VkResult CreateBufferView(const VkBufferViewCreateInfo *pCreateInfo, const VkAllocationCallbacks *pAllocator, VkBufferView *pView) const
         {
-            _table.vkCreateBufferView(_device, pCreateInfo, pAllocator, pView);
+            return _table.vkCreateBufferView(_device, pCreateInfo, pAllocator, pView);
         }
         inline VkResult CreateCommandPool(const VkCommandPoolCreateInfo *pCreateInfo, const VkAllocationCallbacks *pAllocator, VkCommandPool *pCommandPool) const
         {
-            _table.vkCreateCommandPool(_device, pCreateInfo, pAllocator, pCommandPool);
+            return _table.vkCreateCommandPool(_device, pCreateInfo, pAllocator, pCommandPool);
         }
         inline VkResult CreateComputePipelines(VkPipelineCache pipelineCache, uint32_t createInfoCount, const VkComputePipelineCreateInfo *pCreateInfos, const VkAllocationCallbacks *pAllocator, VkPipeline *pPipelines) const
         {
-            _table.vkCreateComputePipelines(_device, pipelineCache, createInfoCount, pCreateInfos, pAllocator, pPipelines);
+            return _table.vkCreateComputePipelines(_device, pipelineCache, createInfoCount, pCreateInfos, pAllocator, pPipelines);
         }
         inline VkResult CreateDescriptorPool(const VkDescriptorPoolCreateInfo *pCreateInfo, const VkAllocationCallbacks *pAllocator, VkDescriptorPool *pDescriptorPool) const
         {
-            _table.vkCreateDescriptorPool(_device, pCreateInfo, pAllocator, pDescriptorPool);
+            return _table.vkCreateDescriptorPool(_device, pCreateInfo, pAllocator, pDescriptorPool);
         }
         inline VkResult CreateDescriptorSetLayout(const VkDescriptorSetLayoutCreateInfo *pCreateInfo, const VkAllocationCallbacks *pAllocator, VkDescriptorSetLayout *pSetLayout) const
         {
-            _table.vkCreateDescriptorSetLayout(_device, pCreateInfo, pAllocator, pSetLayout);
+            return _table.vkCreateDescriptorSetLayout(_device, pCreateInfo, pAllocator, pSetLayout);
         }
         inline VkResult CreateEvent(const VkEventCreateInfo *pCreateInfo, const VkAllocationCallbacks *pAllocator, VkEvent *pEvent) const
         {
-            _table.vkCreateEvent(_device, pCreateInfo, pAllocator, pEvent);
+            return _table.vkCreateEvent(_device, pCreateInfo, pAllocator, pEvent);
         }
         inline VkResult CreateFence(const VkFenceCreateInfo *pCreateInfo, const VkAllocationCallbacks *pAllocator, VkFence *pFence) const
         {
-            _table.vkCreateFence(_device, pCreateInfo, pAllocator, pFence);
+            return _table.vkCreateFence(_device, pCreateInfo, pAllocator, pFence);
         }
         inline VkResult CreateFramebuffer(const VkFramebufferCreateInfo *pCreateInfo, const VkAllocationCallbacks *pAllocator, VkFramebuffer *pFramebuffer) const
         {
-            _table.vkCreateFramebuffer(_device, pCreateInfo, pAllocator, pFramebuffer);
+            return _table.vkCreateFramebuffer(_device, pCreateInfo, pAllocator, pFramebuffer);
         }
         inline VkResult CreateGraphicsPipelines(VkPipelineCache pipelineCache, uint32_t createInfoCount, const VkGraphicsPipelineCreateInfo *pCreateInfos, const VkAllocationCallbacks *pAllocator, VkPipeline *pPipelines) const
         {
-            _table.vkCreateGraphicsPipelines(_device, pipelineCache, createInfoCount, pCreateInfos, pAllocator, pPipelines);
+            return _table.vkCreateGraphicsPipelines(_device, pipelineCache, createInfoCount, pCreateInfos, pAllocator, pPipelines);
         }
         inline VkResult CreateImage(const VkImageCreateInfo *pCreateInfo, const VkAllocationCallbacks *pAllocator, VkImage *pImage) const
         {
-            _table.vkCreateImage(_device, pCreateInfo, pAllocator, pImage);
+            return _table.vkCreateImage(_device, pCreateInfo, pAllocator, pImage);
         }
         inline VkResult CreateImageView(const VkImageViewCreateInfo *pCreateInfo, const VkAllocationCallbacks *pAllocator, VkImageView *pView) const
         {
-            _table.vkCreateImageView(_device, pCreateInfo, pAllocator, pView);
+            return _table.vkCreateImageView(_device, pCreateInfo, pAllocator, pView);
         }
         inline VkResult CreatePipelineCache(const VkPipelineCacheCreateInfo *pCreateInfo, const VkAllocationCallbacks *pAllocator, VkPipelineCache *pPipelineCache) const
         {
-            _table.vkCreatePipelineCache(_device, pCreateInfo, pAllocator, pPipelineCache);
+            return _table.vkCreatePipelineCache(_device, pCreateInfo, pAllocator, pPipelineCache);
         }
         inline VkResult CreatePipelineLayout(const VkPipelineLayoutCreateInfo *pCreateInfo, const VkAllocationCallbacks *pAllocator, VkPipelineLayout *pPipelineLayout) const
         {
-            _table.vkCreatePipelineLayout(_device, pCreateInfo, pAllocator, pPipelineLayout);
+            return _table.vkCreatePipelineLayout(_device, pCreateInfo, pAllocator, pPipelineLayout);
         }
         inline VkResult CreateQueryPool(const VkQueryPoolCreateInfo *pCreateInfo, const VkAllocationCallbacks *pAllocator, VkQueryPool *pQueryPool) const
         {
-            _table.vkCreateQueryPool(_device, pCreateInfo, pAllocator, pQueryPool);
+            return _table.vkCreateQueryPool(_device, pCreateInfo, pAllocator, pQueryPool);
         }
         inline VkResult CreateRenderPass(const VkRenderPassCreateInfo *pCreateInfo, const VkAllocationCallbacks *pAllocator, VkRenderPass *pRenderPass) const
         {
-            _table.vkCreateRenderPass(_device, pCreateInfo, pAllocator, pRenderPass);
+            return _table.vkCreateRenderPass(_device, pCreateInfo, pAllocator, pRenderPass);
         }
         inline VkResult CreateSampler(const VkSamplerCreateInfo *pCreateInfo, const VkAllocationCallbacks *pAllocator, VkSampler *pSampler) const
         {
-            _table.vkCreateSampler(_device, pCreateInfo, pAllocator, pSampler);
+            return _table.vkCreateSampler(_device, pCreateInfo, pAllocator, pSampler);
         }
         inline VkResult CreateSemaphore(const VkSemaphoreCreateInfo *pCreateInfo, const VkAllocationCallbacks *pAllocator, VkSemaphore *pSemaphore) const
         {
-            _table.vkCreateSemaphore(_device, pCreateInfo, pAllocator, pSemaphore);
+            return _table.vkCreateSemaphore(_device, pCreateInfo, pAllocator, pSemaphore);
         }
         inline VkResult CreateShaderModule(const VkShaderModuleCreateInfo *pCreateInfo, const VkAllocationCallbacks *pAllocator, VkShaderModule *pShaderModule) const
         {
-            _table.vkCreateShaderModule(_device, pCreateInfo, pAllocator, pShaderModule);
+            return _table.vkCreateShaderModule(_device, pCreateInfo, pAllocator, pShaderModule);
         }
         inline void DestroyBuffer(VkBuffer buffer, const VkAllocationCallbacks *pAllocator) const
         {
@@ -373,15 +373,15 @@ namespace VOLK_NAMESPACE
         }
         inline VkResult DeviceWaitIdle() const
         {
-            _table.vkDeviceWaitIdle(_device);
+            return _table.vkDeviceWaitIdle(_device);
         }
         inline VkResult EndCommandBuffer(VkCommandBuffer commandBuffer) const
         {
-            _table.vkEndCommandBuffer(commandBuffer);
+            return _table.vkEndCommandBuffer(commandBuffer);
         }
         inline VkResult FlushMappedMemoryRanges(uint32_t memoryRangeCount, const VkMappedMemoryRange *pMemoryRanges) const
         {
-            _table.vkFlushMappedMemoryRanges(_device, memoryRangeCount, pMemoryRanges);
+            return _table.vkFlushMappedMemoryRanges(_device, memoryRangeCount, pMemoryRanges);
         }
         inline void FreeCommandBuffers(VkCommandPool commandPool, uint32_t commandBufferCount, const VkCommandBuffer *pCommandBuffers) const
         {
@@ -389,7 +389,7 @@ namespace VOLK_NAMESPACE
         }
         inline VkResult FreeDescriptorSets(VkDescriptorPool descriptorPool, uint32_t descriptorSetCount, const VkDescriptorSet *pDescriptorSets) const
         {
-            _table.vkFreeDescriptorSets(_device, descriptorPool, descriptorSetCount, pDescriptorSets);
+            return _table.vkFreeDescriptorSets(_device, descriptorPool, descriptorSetCount, pDescriptorSets);
         }
         inline void FreeMemory(VkDeviceMemory memory, const VkAllocationCallbacks *pAllocator) const
         {
@@ -409,11 +409,11 @@ namespace VOLK_NAMESPACE
         }
         inline VkResult GetEventStatus(VkEvent event) const
         {
-            _table.vkGetEventStatus(_device, event);
+            return _table.vkGetEventStatus(_device, event);
         }
         inline VkResult GetFenceStatus(VkFence fence) const
         {
-            _table.vkGetFenceStatus(_device, fence);
+            return _table.vkGetFenceStatus(_device, fence);
         }
         inline void GetImageMemoryRequirements(VkImage image, VkMemoryRequirements *pMemoryRequirements) const
         {
@@ -429,11 +429,11 @@ namespace VOLK_NAMESPACE
         }
         inline VkResult GetPipelineCacheData(VkPipelineCache pipelineCache, size_t *pDataSize, void *pData) const
         {
-            _table.vkGetPipelineCacheData(_device, pipelineCache, pDataSize, pData);
+            return _table.vkGetPipelineCacheData(_device, pipelineCache, pDataSize, pData);
         }
         inline VkResult GetQueryPoolResults(VkQueryPool queryPool, uint32_t firstQuery, uint32_t queryCount, size_t dataSize, void *pData, VkDeviceSize stride, VkQueryResultFlags flags) const
         {
-            _table.vkGetQueryPoolResults(_device, queryPool, firstQuery, queryCount, dataSize, pData, stride, flags);
+            return _table.vkGetQueryPoolResults(_device, queryPool, firstQuery, queryCount, dataSize, pData, stride, flags);
         }
         inline void GetRenderAreaGranularity(VkRenderPass renderPass, VkExtent2D *pGranularity) const
         {
@@ -441,51 +441,51 @@ namespace VOLK_NAMESPACE
         }
         inline VkResult InvalidateMappedMemoryRanges(uint32_t memoryRangeCount, const VkMappedMemoryRange *pMemoryRanges) const
         {
-            _table.vkInvalidateMappedMemoryRanges(_device, memoryRangeCount, pMemoryRanges);
+            return _table.vkInvalidateMappedMemoryRanges(_device, memoryRangeCount, pMemoryRanges);
         }
         inline VkResult MapMemory(VkDeviceMemory memory, VkDeviceSize offset, VkDeviceSize size, VkMemoryMapFlags flags, void **ppData) const
         {
-            _table.vkMapMemory(_device, memory, offset, size, flags, ppData);
+            return _table.vkMapMemory(_device, memory, offset, size, flags, ppData);
         }
         inline VkResult MergePipelineCaches(VkPipelineCache dstCache, uint32_t srcCacheCount, const VkPipelineCache *pSrcCaches) const
         {
-            _table.vkMergePipelineCaches(_device, dstCache, srcCacheCount, pSrcCaches);
+            return _table.vkMergePipelineCaches(_device, dstCache, srcCacheCount, pSrcCaches);
         }
         inline VkResult QueueBindSparse(VkQueue queue, uint32_t bindInfoCount, const VkBindSparseInfo *pBindInfo, VkFence fence) const
         {
-            _table.vkQueueBindSparse(queue, bindInfoCount, pBindInfo, fence);
+            return _table.vkQueueBindSparse(queue, bindInfoCount, pBindInfo, fence);
         }
         inline VkResult QueueSubmit(VkQueue queue, uint32_t submitCount, const VkSubmitInfo *pSubmits, VkFence fence) const
         {
-            _table.vkQueueSubmit(queue, submitCount, pSubmits, fence);
+            return _table.vkQueueSubmit(queue, submitCount, pSubmits, fence);
         }
         inline VkResult QueueWaitIdle(VkQueue queue) const
         {
-            _table.vkQueueWaitIdle(queue);
+            return _table.vkQueueWaitIdle(queue);
         }
         inline VkResult ResetCommandBuffer(VkCommandBuffer commandBuffer, VkCommandBufferResetFlags flags) const
         {
-            _table.vkResetCommandBuffer(commandBuffer, flags);
+            return _table.vkResetCommandBuffer(commandBuffer, flags);
         }
         inline VkResult ResetCommandPool(VkCommandPool commandPool, VkCommandPoolResetFlags flags) const
         {
-            _table.vkResetCommandPool(_device, commandPool, flags);
+            return _table.vkResetCommandPool(_device, commandPool, flags);
         }
         inline VkResult ResetDescriptorPool(VkDescriptorPool descriptorPool, VkDescriptorPoolResetFlags flags) const
         {
-            _table.vkResetDescriptorPool(_device, descriptorPool, flags);
+            return _table.vkResetDescriptorPool(_device, descriptorPool, flags);
         }
         inline VkResult ResetEvent(VkEvent event) const
         {
-            _table.vkResetEvent(_device, event);
+            return _table.vkResetEvent(_device, event);
         }
         inline VkResult ResetFences(uint32_t fenceCount, const VkFence *pFences) const
         {
-            _table.vkResetFences(_device, fenceCount, pFences);
+            return _table.vkResetFences(_device, fenceCount, pFences);
         }
         inline VkResult SetEvent(VkEvent event) const
         {
-            _table.vkSetEvent(_device, event);
+            return _table.vkSetEvent(_device, event);
         }
         inline void UnmapMemory(VkDeviceMemory memory) const
         {
@@ -497,17 +497,17 @@ namespace VOLK_NAMESPACE
         }
         inline VkResult WaitForFences(uint32_t fenceCount, const VkFence *pFences, VkBool32 waitAll, uint64_t timeout) const
         {
-            _table.vkWaitForFences(_device, fenceCount, pFences, waitAll, timeout);
+            return _table.vkWaitForFences(_device, fenceCount, pFences, waitAll, timeout);
         }
 #endif /* defined(VK_VERSION_1_0) */
 #if defined(VK_VERSION_1_1)
         inline VkResult BindBufferMemory2(uint32_t bindInfoCount, const VkBindBufferMemoryInfo *pBindInfos) const
         {
-            _table.vkBindBufferMemory2(_device, bindInfoCount, pBindInfos);
+            return _table.vkBindBufferMemory2(_device, bindInfoCount, pBindInfos);
         }
         inline VkResult BindImageMemory2(uint32_t bindInfoCount, const VkBindImageMemoryInfo *pBindInfos) const
         {
-            _table.vkBindImageMemory2(_device, bindInfoCount, pBindInfos);
+            return _table.vkBindImageMemory2(_device, bindInfoCount, pBindInfos);
         }
         inline void CmdDispatchBase(VkCommandBuffer commandBuffer, uint32_t baseGroupX, uint32_t baseGroupY, uint32_t baseGroupZ, uint32_t groupCountX, uint32_t groupCountY, uint32_t groupCountZ) const
         {
@@ -519,11 +519,11 @@ namespace VOLK_NAMESPACE
         }
         inline VkResult CreateDescriptorUpdateTemplate(const VkDescriptorUpdateTemplateCreateInfo *pCreateInfo, const VkAllocationCallbacks *pAllocator, VkDescriptorUpdateTemplate *pDescriptorUpdateTemplate) const
         {
-            _table.vkCreateDescriptorUpdateTemplate(_device, pCreateInfo, pAllocator, pDescriptorUpdateTemplate);
+            return _table.vkCreateDescriptorUpdateTemplate(_device, pCreateInfo, pAllocator, pDescriptorUpdateTemplate);
         }
         inline VkResult CreateSamplerYcbcrConversion(const VkSamplerYcbcrConversionCreateInfo *pCreateInfo, const VkAllocationCallbacks *pAllocator, VkSamplerYcbcrConversion *pYcbcrConversion) const
         {
-            _table.vkCreateSamplerYcbcrConversion(_device, pCreateInfo, pAllocator, pYcbcrConversion);
+            return _table.vkCreateSamplerYcbcrConversion(_device, pCreateInfo, pAllocator, pYcbcrConversion);
         }
         inline void DestroyDescriptorUpdateTemplate(VkDescriptorUpdateTemplate descriptorUpdateTemplate, const VkAllocationCallbacks *pAllocator) const
         {
@@ -589,23 +589,23 @@ namespace VOLK_NAMESPACE
         }
         inline VkResult CreateRenderPass2(const VkRenderPassCreateInfo2 *pCreateInfo, const VkAllocationCallbacks *pAllocator, VkRenderPass *pRenderPass) const
         {
-            _table.vkCreateRenderPass2(_device, pCreateInfo, pAllocator, pRenderPass);
+            return _table.vkCreateRenderPass2(_device, pCreateInfo, pAllocator, pRenderPass);
         }
         inline VkDeviceAddress GetBufferDeviceAddress(const VkBufferDeviceAddressInfo *pInfo) const
         {
-            _table.vkGetBufferDeviceAddress(_device, pInfo);
+            return _table.vkGetBufferDeviceAddress(_device, pInfo);
         }
         inline uint64_t GetBufferOpaqueCaptureAddress(const VkBufferDeviceAddressInfo *pInfo) const
         {
-            _table.vkGetBufferOpaqueCaptureAddress(_device, pInfo);
+            return _table.vkGetBufferOpaqueCaptureAddress(_device, pInfo);
         }
         inline uint64_t GetDeviceMemoryOpaqueCaptureAddress(const VkDeviceMemoryOpaqueCaptureAddressInfo *pInfo) const
         {
-            _table.vkGetDeviceMemoryOpaqueCaptureAddress(_device, pInfo);
+            return _table.vkGetDeviceMemoryOpaqueCaptureAddress(_device, pInfo);
         }
         inline VkResult GetSemaphoreCounterValue(VkSemaphore semaphore, uint64_t *pValue) const
         {
-            _table.vkGetSemaphoreCounterValue(_device, semaphore, pValue);
+            return _table.vkGetSemaphoreCounterValue(_device, semaphore, pValue);
         }
         inline void ResetQueryPool(VkQueryPool queryPool, uint32_t firstQuery, uint32_t queryCount) const
         {
@@ -613,11 +613,11 @@ namespace VOLK_NAMESPACE
         }
         inline VkResult SignalSemaphore(const VkSemaphoreSignalInfo *pSignalInfo) const
         {
-            _table.vkSignalSemaphore(_device, pSignalInfo);
+            return _table.vkSignalSemaphore(_device, pSignalInfo);
         }
         inline VkResult WaitSemaphores(const VkSemaphoreWaitInfo *pWaitInfo, uint64_t timeout) const
         {
-            _table.vkWaitSemaphores(_device, pWaitInfo, timeout);
+            return _table.vkWaitSemaphores(_device, pWaitInfo, timeout);
         }
 #endif /* defined(VK_VERSION_1_2) */
 #if defined(VK_AMD_buffer_marker)
@@ -645,29 +645,29 @@ namespace VOLK_NAMESPACE
 #if defined(VK_AMD_shader_info)
         inline VkResult GetShaderInfoAMD(VkPipeline pipeline, VkShaderStageFlagBits shaderStage, VkShaderInfoTypeAMD infoType, size_t *pInfoSize, void *pInfo) const
         {
-            _table.vkGetShaderInfoAMD(_device, pipeline, shaderStage, infoType, pInfoSize, pInfo);
+            return _table.vkGetShaderInfoAMD(_device, pipeline, shaderStage, infoType, pInfoSize, pInfo);
         }
 #endif /* defined(VK_AMD_shader_info) */
 #if defined(VK_ANDROID_external_memory_android_hardware_buffer)
         inline VkResult GetAndroidHardwareBufferPropertiesANDROID(const struct AHardwareBuffer *buffer, VkAndroidHardwareBufferPropertiesANDROID *pProperties) const
         {
-            _table.vkGetAndroidHardwareBufferPropertiesANDROID(_device, buffer, pProperties);
+            return _table.vkGetAndroidHardwareBufferPropertiesANDROID(_device, buffer, pProperties);
         }
         inline VkResult GetMemoryAndroidHardwareBufferANDROID(const VkMemoryGetAndroidHardwareBufferInfoANDROID *pInfo, struct AHardwareBuffer **pBuffer) const
         {
-            _table.vkGetMemoryAndroidHardwareBufferANDROID(_device, pInfo, pBuffer);
+            return _table.vkGetMemoryAndroidHardwareBufferANDROID(_device, pInfo, pBuffer);
         }
 #endif /* defined(VK_ANDROID_external_memory_android_hardware_buffer) */
 #if defined(VK_EXT_buffer_device_address)
         inline VkDeviceAddress GetBufferDeviceAddressEXT(const VkBufferDeviceAddressInfo *pInfo) const
         {
-            _table.vkGetBufferDeviceAddressEXT(_device, pInfo);
+            return _table.vkGetBufferDeviceAddressEXT(_device, pInfo);
         }
 #endif /* defined(VK_EXT_buffer_device_address) */
 #if defined(VK_EXT_calibrated_timestamps)
         inline VkResult GetCalibratedTimestampsEXT(uint32_t timestampCount, const VkCalibratedTimestampInfoEXT *pTimestampInfos, uint64_t *pTimestamps, uint64_t *pMaxDeviation) const
         {
-            _table.vkGetCalibratedTimestampsEXT(_device, timestampCount, pTimestampInfos, pTimestamps, pMaxDeviation);
+            return _table.vkGetCalibratedTimestampsEXT(_device, timestampCount, pTimestampInfos, pTimestamps, pMaxDeviation);
         }
 #endif /* defined(VK_EXT_calibrated_timestamps) */
 #if defined(VK_EXT_conditional_rendering)
@@ -695,11 +695,11 @@ namespace VOLK_NAMESPACE
         }
         inline VkResult DebugMarkerSetObjectNameEXT(const VkDebugMarkerObjectNameInfoEXT *pNameInfo) const
         {
-            _table.vkDebugMarkerSetObjectNameEXT(_device, pNameInfo);
+            return _table.vkDebugMarkerSetObjectNameEXT(_device, pNameInfo);
         }
         inline VkResult DebugMarkerSetObjectTagEXT(const VkDebugMarkerObjectTagInfoEXT *pTagInfo) const
         {
-            _table.vkDebugMarkerSetObjectTagEXT(_device, pTagInfo);
+            return _table.vkDebugMarkerSetObjectTagEXT(_device, pTagInfo);
         }
 #endif /* defined(VK_EXT_debug_marker) */
 #if defined(VK_EXT_discard_rectangles)
@@ -711,19 +711,19 @@ namespace VOLK_NAMESPACE
 #if defined(VK_EXT_display_control)
         inline VkResult DisplayPowerControlEXT(VkDisplayKHR display, const VkDisplayPowerInfoEXT *pDisplayPowerInfo) const
         {
-            _table.vkDisplayPowerControlEXT(_device, display, pDisplayPowerInfo);
+            return _table.vkDisplayPowerControlEXT(_device, display, pDisplayPowerInfo);
         }
         inline VkResult GetSwapchainCounterEXT(VkSwapchainKHR swapchain, VkSurfaceCounterFlagBitsEXT counter, uint64_t *pCounterValue) const
         {
-            _table.vkGetSwapchainCounterEXT(_device, swapchain, counter, pCounterValue);
+            return _table.vkGetSwapchainCounterEXT(_device, swapchain, counter, pCounterValue);
         }
         inline VkResult RegisterDeviceEventEXT(const VkDeviceEventInfoEXT *pDeviceEventInfo, const VkAllocationCallbacks *pAllocator, VkFence *pFence) const
         {
-            _table.vkRegisterDeviceEventEXT(_device, pDeviceEventInfo, pAllocator, pFence);
+            return _table.vkRegisterDeviceEventEXT(_device, pDeviceEventInfo, pAllocator, pFence);
         }
         inline VkResult RegisterDisplayEventEXT(VkDisplayKHR display, const VkDisplayEventInfoEXT *pDisplayEventInfo, const VkAllocationCallbacks *pAllocator, VkFence *pFence) const
         {
-            _table.vkRegisterDisplayEventEXT(_device, display, pDisplayEventInfo, pAllocator, pFence);
+            return _table.vkRegisterDisplayEventEXT(_device, display, pDisplayEventInfo, pAllocator, pFence);
         }
 #endif /* defined(VK_EXT_display_control) */
 #if defined(VK_EXT_extended_dynamic_state)
@@ -779,17 +779,17 @@ namespace VOLK_NAMESPACE
 #if defined(VK_EXT_external_memory_host)
         inline VkResult GetMemoryHostPointerPropertiesEXT(VkExternalMemoryHandleTypeFlagBits handleType, const void *pHostPointer, VkMemoryHostPointerPropertiesEXT *pMemoryHostPointerProperties) const
         {
-            _table.vkGetMemoryHostPointerPropertiesEXT(_device, handleType, pHostPointer, pMemoryHostPointerProperties);
+            return _table.vkGetMemoryHostPointerPropertiesEXT(_device, handleType, pHostPointer, pMemoryHostPointerProperties);
         }
 #endif /* defined(VK_EXT_external_memory_host) */
 #if defined(VK_EXT_full_screen_exclusive)
         inline VkResult AcquireFullScreenExclusiveModeEXT(VkSwapchainKHR swapchain) const
         {
-            _table.vkAcquireFullScreenExclusiveModeEXT(_device, swapchain);
+            return _table.vkAcquireFullScreenExclusiveModeEXT(_device, swapchain);
         }
         inline VkResult ReleaseFullScreenExclusiveModeEXT(VkSwapchainKHR swapchain) const
         {
-            _table.vkReleaseFullScreenExclusiveModeEXT(_device, swapchain);
+            return _table.vkReleaseFullScreenExclusiveModeEXT(_device, swapchain);
         }
 #endif /* defined(VK_EXT_full_screen_exclusive) */
 #if defined(VK_EXT_hdr_metadata)
@@ -807,7 +807,7 @@ namespace VOLK_NAMESPACE
 #if defined(VK_EXT_image_drm_format_modifier)
         inline VkResult GetImageDrmFormatModifierPropertiesEXT(VkImage image, VkImageDrmFormatModifierPropertiesEXT *pProperties) const
         {
-            _table.vkGetImageDrmFormatModifierPropertiesEXT(_device, image, pProperties);
+            return _table.vkGetImageDrmFormatModifierPropertiesEXT(_device, image, pProperties);
         }
 #endif /* defined(VK_EXT_image_drm_format_modifier) */
 #if defined(VK_EXT_line_rasterization)
@@ -819,7 +819,7 @@ namespace VOLK_NAMESPACE
 #if defined(VK_EXT_private_data)
         inline VkResult CreatePrivateDataSlotEXT(const VkPrivateDataSlotCreateInfoEXT *pCreateInfo, const VkAllocationCallbacks *pAllocator, VkPrivateDataSlotEXT *pPrivateDataSlot) const
         {
-            _table.vkCreatePrivateDataSlotEXT(_device, pCreateInfo, pAllocator, pPrivateDataSlot);
+            return _table.vkCreatePrivateDataSlotEXT(_device, pCreateInfo, pAllocator, pPrivateDataSlot);
         }
         inline void DestroyPrivateDataSlotEXT(VkPrivateDataSlotEXT privateDataSlot, const VkAllocationCallbacks *pAllocator) const
         {
@@ -831,7 +831,7 @@ namespace VOLK_NAMESPACE
         }
         inline VkResult SetPrivateDataEXT(VkObjectType objectType, uint64_t objectHandle, VkPrivateDataSlotEXT privateDataSlot, uint64_t data) const
         {
-            _table.vkSetPrivateDataEXT(_device, objectType, objectHandle, privateDataSlot, data);
+            return _table.vkSetPrivateDataEXT(_device, objectType, objectHandle, privateDataSlot, data);
         }
 #endif /* defined(VK_EXT_private_data) */
 #if defined(VK_EXT_sample_locations)
@@ -869,7 +869,7 @@ namespace VOLK_NAMESPACE
 #if defined(VK_EXT_validation_cache)
         inline VkResult CreateValidationCacheEXT(const VkValidationCacheCreateInfoEXT *pCreateInfo, const VkAllocationCallbacks *pAllocator, VkValidationCacheEXT *pValidationCache) const
         {
-            _table.vkCreateValidationCacheEXT(_device, pCreateInfo, pAllocator, pValidationCache);
+            return _table.vkCreateValidationCacheEXT(_device, pCreateInfo, pAllocator, pValidationCache);
         }
         inline void DestroyValidationCacheEXT(VkValidationCacheEXT validationCache, const VkAllocationCallbacks *pAllocator) const
         {
@@ -877,55 +877,55 @@ namespace VOLK_NAMESPACE
         }
         inline VkResult GetValidationCacheDataEXT(VkValidationCacheEXT validationCache, size_t *pDataSize, void *pData) const
         {
-            _table.vkGetValidationCacheDataEXT(_device, validationCache, pDataSize, pData);
+            return _table.vkGetValidationCacheDataEXT(_device, validationCache, pDataSize, pData);
         }
         inline VkResult MergeValidationCachesEXT(VkValidationCacheEXT dstCache, uint32_t srcCacheCount, const VkValidationCacheEXT *pSrcCaches) const
         {
-            _table.vkMergeValidationCachesEXT(_device, dstCache, srcCacheCount, pSrcCaches);
+            return _table.vkMergeValidationCachesEXT(_device, dstCache, srcCacheCount, pSrcCaches);
         }
 #endif /* defined(VK_EXT_validation_cache) */
 #if defined(VK_GOOGLE_display_timing)
         inline VkResult GetPastPresentationTimingGOOGLE(VkSwapchainKHR swapchain, uint32_t *pPresentationTimingCount, VkPastPresentationTimingGOOGLE *pPresentationTimings) const
         {
-            _table.vkGetPastPresentationTimingGOOGLE(_device, swapchain, pPresentationTimingCount, pPresentationTimings);
+            return _table.vkGetPastPresentationTimingGOOGLE(_device, swapchain, pPresentationTimingCount, pPresentationTimings);
         }
         inline VkResult GetRefreshCycleDurationGOOGLE(VkSwapchainKHR swapchain, VkRefreshCycleDurationGOOGLE *pDisplayTimingProperties) const
         {
-            _table.vkGetRefreshCycleDurationGOOGLE(_device, swapchain, pDisplayTimingProperties);
+            return _table.vkGetRefreshCycleDurationGOOGLE(_device, swapchain, pDisplayTimingProperties);
         }
 #endif /* defined(VK_GOOGLE_display_timing) */
 #if defined(VK_INTEL_performance_query)
         inline VkResult AcquirePerformanceConfigurationINTEL(const VkPerformanceConfigurationAcquireInfoINTEL *pAcquireInfo, VkPerformanceConfigurationINTEL *pConfiguration) const
         {
-            _table.vkAcquirePerformanceConfigurationINTEL(_device, pAcquireInfo, pConfiguration);
+            return _table.vkAcquirePerformanceConfigurationINTEL(_device, pAcquireInfo, pConfiguration);
         }
         inline VkResult CmdSetPerformanceMarkerINTEL(VkCommandBuffer commandBuffer, const VkPerformanceMarkerInfoINTEL *pMarkerInfo) const
         {
-            _table.vkCmdSetPerformanceMarkerINTEL(commandBuffer, pMarkerInfo);
+            return _table.vkCmdSetPerformanceMarkerINTEL(commandBuffer, pMarkerInfo);
         }
         inline VkResult CmdSetPerformanceOverrideINTEL(VkCommandBuffer commandBuffer, const VkPerformanceOverrideInfoINTEL *pOverrideInfo) const
         {
-            _table.vkCmdSetPerformanceOverrideINTEL(commandBuffer, pOverrideInfo);
+            return _table.vkCmdSetPerformanceOverrideINTEL(commandBuffer, pOverrideInfo);
         }
         inline VkResult CmdSetPerformanceStreamMarkerINTEL(VkCommandBuffer commandBuffer, const VkPerformanceStreamMarkerInfoINTEL *pMarkerInfo) const
         {
-            _table.vkCmdSetPerformanceStreamMarkerINTEL(commandBuffer, pMarkerInfo);
+            return _table.vkCmdSetPerformanceStreamMarkerINTEL(commandBuffer, pMarkerInfo);
         }
         inline VkResult GetPerformanceParameterINTEL(VkPerformanceParameterTypeINTEL parameter, VkPerformanceValueINTEL *pValue) const
         {
-            _table.vkGetPerformanceParameterINTEL(_device, parameter, pValue);
+            return _table.vkGetPerformanceParameterINTEL(_device, parameter, pValue);
         }
         inline VkResult InitializePerformanceApiINTEL(const VkInitializePerformanceApiInfoINTEL *pInitializeInfo) const
         {
-            _table.vkInitializePerformanceApiINTEL(_device, pInitializeInfo);
+            return _table.vkInitializePerformanceApiINTEL(_device, pInitializeInfo);
         }
         inline VkResult QueueSetPerformanceConfigurationINTEL(VkQueue queue, VkPerformanceConfigurationINTEL configuration) const
         {
-            _table.vkQueueSetPerformanceConfigurationINTEL(queue, configuration);
+            return _table.vkQueueSetPerformanceConfigurationINTEL(queue, configuration);
         }
         inline VkResult ReleasePerformanceConfigurationINTEL(VkPerformanceConfigurationINTEL configuration) const
         {
-            _table.vkReleasePerformanceConfigurationINTEL(_device, configuration);
+            return _table.vkReleasePerformanceConfigurationINTEL(_device, configuration);
         }
         inline void UninitializePerformanceApiINTEL() const
         {
@@ -935,7 +935,7 @@ namespace VOLK_NAMESPACE
 #if defined(VK_KHR_acceleration_structure)
         inline VkResult BuildAccelerationStructuresKHR(VkDeferredOperationKHR deferredOperation, uint32_t infoCount, const VkAccelerationStructureBuildGeometryInfoKHR *pInfos, const VkAccelerationStructureBuildRangeInfoKHR *const *ppBuildRangeInfos) const
         {
-            _table.vkBuildAccelerationStructuresKHR(_device, deferredOperation, infoCount, pInfos, ppBuildRangeInfos);
+            return _table.vkBuildAccelerationStructuresKHR(_device, deferredOperation, infoCount, pInfos, ppBuildRangeInfos);
         }
         inline void CmdBuildAccelerationStructuresIndirectKHR(VkCommandBuffer commandBuffer, uint32_t infoCount, const VkAccelerationStructureBuildGeometryInfoKHR *pInfos, const VkDeviceAddress *pIndirectDeviceAddresses, const uint32_t *pIndirectStrides, const uint32_t *const *ppMaxPrimitiveCounts) const
         {
@@ -963,19 +963,19 @@ namespace VOLK_NAMESPACE
         }
         inline VkResult CopyAccelerationStructureKHR(VkDeferredOperationKHR deferredOperation, const VkCopyAccelerationStructureInfoKHR *pInfo) const
         {
-            _table.vkCopyAccelerationStructureKHR(_device, deferredOperation, pInfo);
+            return _table.vkCopyAccelerationStructureKHR(_device, deferredOperation, pInfo);
         }
         inline VkResult CopyAccelerationStructureToMemoryKHR(VkDeferredOperationKHR deferredOperation, const VkCopyAccelerationStructureToMemoryInfoKHR *pInfo) const
         {
-            _table.vkCopyAccelerationStructureToMemoryKHR(_device, deferredOperation, pInfo);
+            return _table.vkCopyAccelerationStructureToMemoryKHR(_device, deferredOperation, pInfo);
         }
         inline VkResult CopyMemoryToAccelerationStructureKHR(VkDeferredOperationKHR deferredOperation, const VkCopyMemoryToAccelerationStructureInfoKHR *pInfo) const
         {
-            _table.vkCopyMemoryToAccelerationStructureKHR(_device, deferredOperation, pInfo);
+            return _table.vkCopyMemoryToAccelerationStructureKHR(_device, deferredOperation, pInfo);
         }
         inline VkResult CreateAccelerationStructureKHR(const VkAccelerationStructureCreateInfoKHR *pCreateInfo, const VkAllocationCallbacks *pAllocator, VkAccelerationStructureKHR *pAccelerationStructure) const
         {
-            _table.vkCreateAccelerationStructureKHR(_device, pCreateInfo, pAllocator, pAccelerationStructure);
+            return _table.vkCreateAccelerationStructureKHR(_device, pCreateInfo, pAllocator, pAccelerationStructure);
         }
         inline void DestroyAccelerationStructureKHR(VkAccelerationStructureKHR accelerationStructure, const VkAllocationCallbacks *pAllocator) const
         {
@@ -987,7 +987,7 @@ namespace VOLK_NAMESPACE
         }
         inline VkDeviceAddress GetAccelerationStructureDeviceAddressKHR(const VkAccelerationStructureDeviceAddressInfoKHR *pInfo) const
         {
-            _table.vkGetAccelerationStructureDeviceAddressKHR(_device, pInfo);
+            return _table.vkGetAccelerationStructureDeviceAddressKHR(_device, pInfo);
         }
         inline void GetDeviceAccelerationStructureCompatibilityKHR(const VkAccelerationStructureVersionInfoKHR *pVersionInfo, VkAccelerationStructureCompatibilityKHR *pCompatibility) const
         {
@@ -995,31 +995,31 @@ namespace VOLK_NAMESPACE
         }
         inline VkResult WriteAccelerationStructuresPropertiesKHR(uint32_t accelerationStructureCount, const VkAccelerationStructureKHR *pAccelerationStructures, VkQueryType queryType, size_t dataSize, void *pData, size_t stride) const
         {
-            _table.vkWriteAccelerationStructuresPropertiesKHR(_device, accelerationStructureCount, pAccelerationStructures, queryType, dataSize, pData, stride);
+            return _table.vkWriteAccelerationStructuresPropertiesKHR(_device, accelerationStructureCount, pAccelerationStructures, queryType, dataSize, pData, stride);
         }
 #endif /* defined(VK_KHR_acceleration_structure) */
 #if defined(VK_KHR_bind_memory2)
         inline VkResult BindBufferMemory2KHR(uint32_t bindInfoCount, const VkBindBufferMemoryInfo *pBindInfos) const
         {
-            _table.vkBindBufferMemory2KHR(_device, bindInfoCount, pBindInfos);
+            return _table.vkBindBufferMemory2KHR(_device, bindInfoCount, pBindInfos);
         }
         inline VkResult BindImageMemory2KHR(uint32_t bindInfoCount, const VkBindImageMemoryInfo *pBindInfos) const
         {
-            _table.vkBindImageMemory2KHR(_device, bindInfoCount, pBindInfos);
+            return _table.vkBindImageMemory2KHR(_device, bindInfoCount, pBindInfos);
         }
 #endif /* defined(VK_KHR_bind_memory2) */
 #if defined(VK_KHR_buffer_device_address)
         inline VkDeviceAddress GetBufferDeviceAddressKHR(const VkBufferDeviceAddressInfo *pInfo) const
         {
-            _table.vkGetBufferDeviceAddressKHR(_device, pInfo);
+            return _table.vkGetBufferDeviceAddressKHR(_device, pInfo);
         }
         inline uint64_t GetBufferOpaqueCaptureAddressKHR(const VkBufferDeviceAddressInfo *pInfo) const
         {
-            _table.vkGetBufferOpaqueCaptureAddressKHR(_device, pInfo);
+            return _table.vkGetBufferOpaqueCaptureAddressKHR(_device, pInfo);
         }
         inline uint64_t GetDeviceMemoryOpaqueCaptureAddressKHR(const VkDeviceMemoryOpaqueCaptureAddressInfo *pInfo) const
         {
-            _table.vkGetDeviceMemoryOpaqueCaptureAddressKHR(_device, pInfo);
+            return _table.vkGetDeviceMemoryOpaqueCaptureAddressKHR(_device, pInfo);
         }
 #endif /* defined(VK_KHR_buffer_device_address) */
 #if defined(VK_KHR_copy_commands2)
@@ -1063,17 +1063,17 @@ namespace VOLK_NAMESPACE
         }
         inline VkResult CreateRenderPass2KHR(const VkRenderPassCreateInfo2 *pCreateInfo, const VkAllocationCallbacks *pAllocator, VkRenderPass *pRenderPass) const
         {
-            _table.vkCreateRenderPass2KHR(_device, pCreateInfo, pAllocator, pRenderPass);
+            return _table.vkCreateRenderPass2KHR(_device, pCreateInfo, pAllocator, pRenderPass);
         }
 #endif /* defined(VK_KHR_create_renderpass2) */
 #if defined(VK_KHR_deferred_host_operations)
         inline VkResult CreateDeferredOperationKHR(const VkAllocationCallbacks *pAllocator, VkDeferredOperationKHR *pDeferredOperation) const
         {
-            _table.vkCreateDeferredOperationKHR(_device, pAllocator, pDeferredOperation);
+            return _table.vkCreateDeferredOperationKHR(_device, pAllocator, pDeferredOperation);
         }
         inline VkResult DeferredOperationJoinKHR(VkDeferredOperationKHR operation) const
         {
-            _table.vkDeferredOperationJoinKHR(_device, operation);
+            return _table.vkDeferredOperationJoinKHR(_device, operation);
         }
         inline void DestroyDeferredOperationKHR(VkDeferredOperationKHR operation, const VkAllocationCallbacks *pAllocator) const
         {
@@ -1081,17 +1081,17 @@ namespace VOLK_NAMESPACE
         }
         inline uint32_t GetDeferredOperationMaxConcurrencyKHR(VkDeferredOperationKHR operation) const
         {
-            _table.vkGetDeferredOperationMaxConcurrencyKHR(_device, operation);
+            return _table.vkGetDeferredOperationMaxConcurrencyKHR(_device, operation);
         }
         inline VkResult GetDeferredOperationResultKHR(VkDeferredOperationKHR operation) const
         {
-            _table.vkGetDeferredOperationResultKHR(_device, operation);
+            return _table.vkGetDeferredOperationResultKHR(_device, operation);
         }
 #endif /* defined(VK_KHR_deferred_host_operations) */
 #if defined(VK_KHR_descriptor_update_template)
         inline VkResult CreateDescriptorUpdateTemplateKHR(const VkDescriptorUpdateTemplateCreateInfo *pCreateInfo, const VkAllocationCallbacks *pAllocator, VkDescriptorUpdateTemplate *pDescriptorUpdateTemplate) const
         {
-            _table.vkCreateDescriptorUpdateTemplateKHR(_device, pCreateInfo, pAllocator, pDescriptorUpdateTemplate);
+            return _table.vkCreateDescriptorUpdateTemplateKHR(_device, pCreateInfo, pAllocator, pDescriptorUpdateTemplate);
         }
         inline void DestroyDescriptorUpdateTemplateKHR(VkDescriptorUpdateTemplate descriptorUpdateTemplate, const VkAllocationCallbacks *pAllocator) const
         {
@@ -1119,7 +1119,7 @@ namespace VOLK_NAMESPACE
 #if defined(VK_KHR_display_swapchain)
         inline VkResult CreateSharedSwapchainsKHR(uint32_t swapchainCount, const VkSwapchainCreateInfoKHR *pCreateInfos, const VkAllocationCallbacks *pAllocator, VkSwapchainKHR *pSwapchains) const
         {
-            _table.vkCreateSharedSwapchainsKHR(_device, swapchainCount, pCreateInfos, pAllocator, pSwapchains);
+            return _table.vkCreateSharedSwapchainsKHR(_device, swapchainCount, pCreateInfos, pAllocator, pSwapchains);
         }
 #endif /* defined(VK_KHR_display_swapchain) */
 #if defined(VK_KHR_draw_indirect_count)
@@ -1135,61 +1135,61 @@ namespace VOLK_NAMESPACE
 #if defined(VK_KHR_external_fence_fd)
         inline VkResult GetFenceFdKHR(const VkFenceGetFdInfoKHR *pGetFdInfo, int *pFd) const
         {
-            _table.vkGetFenceFdKHR(_device, pGetFdInfo, pFd);
+            return _table.vkGetFenceFdKHR(_device, pGetFdInfo, pFd);
         }
         inline VkResult ImportFenceFdKHR(const VkImportFenceFdInfoKHR *pImportFenceFdInfo) const
         {
-            _table.vkImportFenceFdKHR(_device, pImportFenceFdInfo);
+            return _table.vkImportFenceFdKHR(_device, pImportFenceFdInfo);
         }
 #endif /* defined(VK_KHR_external_fence_fd) */
 #if defined(VK_KHR_external_fence_win32)
         inline VkResult GetFenceWin32HandleKHR(const VkFenceGetWin32HandleInfoKHR *pGetWin32HandleInfo, HANDLE *pHandle) const
         {
-            _table.vkGetFenceWin32HandleKHR(_device, pGetWin32HandleInfo, pHandle);
+            return _table.vkGetFenceWin32HandleKHR(_device, pGetWin32HandleInfo, pHandle);
         }
         inline VkResult ImportFenceWin32HandleKHR(const VkImportFenceWin32HandleInfoKHR *pImportFenceWin32HandleInfo) const
         {
-            _table.vkImportFenceWin32HandleKHR(_device, pImportFenceWin32HandleInfo);
+            return _table.vkImportFenceWin32HandleKHR(_device, pImportFenceWin32HandleInfo);
         }
 #endif /* defined(VK_KHR_external_fence_win32) */
 #if defined(VK_KHR_external_memory_fd)
         inline VkResult GetMemoryFdKHR(const VkMemoryGetFdInfoKHR *pGetFdInfo, int *pFd) const
         {
-            _table.vkGetMemoryFdKHR(_device, pGetFdInfo, pFd);
+            return _table.vkGetMemoryFdKHR(_device, pGetFdInfo, pFd);
         }
         inline VkResult GetMemoryFdPropertiesKHR(VkExternalMemoryHandleTypeFlagBits handleType, int fd, VkMemoryFdPropertiesKHR *pMemoryFdProperties) const
         {
-            _table.vkGetMemoryFdPropertiesKHR(_device, handleType, fd, pMemoryFdProperties);
+            return _table.vkGetMemoryFdPropertiesKHR(_device, handleType, fd, pMemoryFdProperties);
         }
 #endif /* defined(VK_KHR_external_memory_fd) */
 #if defined(VK_KHR_external_memory_win32)
         inline VkResult GetMemoryWin32HandleKHR(const VkMemoryGetWin32HandleInfoKHR *pGetWin32HandleInfo, HANDLE *pHandle) const
         {
-            _table.vkGetMemoryWin32HandleKHR(_device, pGetWin32HandleInfo, pHandle);
+            return _table.vkGetMemoryWin32HandleKHR(_device, pGetWin32HandleInfo, pHandle);
         }
         inline VkResult GetMemoryWin32HandlePropertiesKHR(VkExternalMemoryHandleTypeFlagBits handleType, HANDLE handle, VkMemoryWin32HandlePropertiesKHR *pMemoryWin32HandleProperties) const
         {
-            _table.vkGetMemoryWin32HandlePropertiesKHR(_device, handleType, handle, pMemoryWin32HandleProperties);
+            return _table.vkGetMemoryWin32HandlePropertiesKHR(_device, handleType, handle, pMemoryWin32HandleProperties);
         }
 #endif /* defined(VK_KHR_external_memory_win32) */
 #if defined(VK_KHR_external_semaphore_fd)
         inline VkResult GetSemaphoreFdKHR(const VkSemaphoreGetFdInfoKHR *pGetFdInfo, int *pFd) const
         {
-            _table.vkGetSemaphoreFdKHR(_device, pGetFdInfo, pFd);
+            return _table.vkGetSemaphoreFdKHR(_device, pGetFdInfo, pFd);
         }
         inline VkResult ImportSemaphoreFdKHR(const VkImportSemaphoreFdInfoKHR *pImportSemaphoreFdInfo) const
         {
-            _table.vkImportSemaphoreFdKHR(_device, pImportSemaphoreFdInfo);
+            return _table.vkImportSemaphoreFdKHR(_device, pImportSemaphoreFdInfo);
         }
 #endif /* defined(VK_KHR_external_semaphore_fd) */
 #if defined(VK_KHR_external_semaphore_win32)
         inline VkResult GetSemaphoreWin32HandleKHR(const VkSemaphoreGetWin32HandleInfoKHR *pGetWin32HandleInfo, HANDLE *pHandle) const
         {
-            _table.vkGetSemaphoreWin32HandleKHR(_device, pGetWin32HandleInfo, pHandle);
+            return _table.vkGetSemaphoreWin32HandleKHR(_device, pGetWin32HandleInfo, pHandle);
         }
         inline VkResult ImportSemaphoreWin32HandleKHR(const VkImportSemaphoreWin32HandleInfoKHR *pImportSemaphoreWin32HandleInfo) const
         {
-            _table.vkImportSemaphoreWin32HandleKHR(_device, pImportSemaphoreWin32HandleInfo);
+            return _table.vkImportSemaphoreWin32HandleKHR(_device, pImportSemaphoreWin32HandleInfo);
         }
 #endif /* defined(VK_KHR_external_semaphore_win32) */
 #if defined(VK_KHR_fragment_shading_rate)
@@ -1227,7 +1227,7 @@ namespace VOLK_NAMESPACE
 #if defined(VK_KHR_performance_query)
         inline VkResult AcquireProfilingLockKHR(const VkAcquireProfilingLockInfoKHR *pInfo) const
         {
-            _table.vkAcquireProfilingLockKHR(_device, pInfo);
+            return _table.vkAcquireProfilingLockKHR(_device, pInfo);
         }
         inline void ReleaseProfilingLockKHR() const
         {
@@ -1237,15 +1237,15 @@ namespace VOLK_NAMESPACE
 #if defined(VK_KHR_pipeline_executable_properties)
         inline VkResult GetPipelineExecutableInternalRepresentationsKHR(const VkPipelineExecutableInfoKHR *pExecutableInfo, uint32_t *pInternalRepresentationCount, VkPipelineExecutableInternalRepresentationKHR *pInternalRepresentations) const
         {
-            _table.vkGetPipelineExecutableInternalRepresentationsKHR(_device, pExecutableInfo, pInternalRepresentationCount, pInternalRepresentations);
+            return _table.vkGetPipelineExecutableInternalRepresentationsKHR(_device, pExecutableInfo, pInternalRepresentationCount, pInternalRepresentations);
         }
         inline VkResult GetPipelineExecutablePropertiesKHR(const VkPipelineInfoKHR *pPipelineInfo, uint32_t *pExecutableCount, VkPipelineExecutablePropertiesKHR *pProperties) const
         {
-            _table.vkGetPipelineExecutablePropertiesKHR(_device, pPipelineInfo, pExecutableCount, pProperties);
+            return _table.vkGetPipelineExecutablePropertiesKHR(_device, pPipelineInfo, pExecutableCount, pProperties);
         }
         inline VkResult GetPipelineExecutableStatisticsKHR(const VkPipelineExecutableInfoKHR *pExecutableInfo, uint32_t *pStatisticCount, VkPipelineExecutableStatisticKHR *pStatistics) const
         {
-            _table.vkGetPipelineExecutableStatisticsKHR(_device, pExecutableInfo, pStatisticCount, pStatistics);
+            return _table.vkGetPipelineExecutableStatisticsKHR(_device, pExecutableInfo, pStatisticCount, pStatistics);
         }
 #endif /* defined(VK_KHR_pipeline_executable_properties) */
 #if defined(VK_KHR_push_descriptor)
@@ -1269,25 +1269,25 @@ namespace VOLK_NAMESPACE
         }
         inline VkResult CreateRayTracingPipelinesKHR(VkDeferredOperationKHR deferredOperation, VkPipelineCache pipelineCache, uint32_t createInfoCount, const VkRayTracingPipelineCreateInfoKHR *pCreateInfos, const VkAllocationCallbacks *pAllocator, VkPipeline *pPipelines) const
         {
-            _table.vkCreateRayTracingPipelinesKHR(_device, deferredOperation, pipelineCache, createInfoCount, pCreateInfos, pAllocator, pPipelines);
+            return _table.vkCreateRayTracingPipelinesKHR(_device, deferredOperation, pipelineCache, createInfoCount, pCreateInfos, pAllocator, pPipelines);
         }
         inline VkResult GetRayTracingCaptureReplayShaderGroupHandlesKHR(VkPipeline pipeline, uint32_t firstGroup, uint32_t groupCount, size_t dataSize, void *pData) const
         {
-            _table.vkGetRayTracingCaptureReplayShaderGroupHandlesKHR(_device, pipeline, firstGroup, groupCount, dataSize, pData);
+            return _table.vkGetRayTracingCaptureReplayShaderGroupHandlesKHR(_device, pipeline, firstGroup, groupCount, dataSize, pData);
         }
         inline VkResult GetRayTracingShaderGroupHandlesKHR(VkPipeline pipeline, uint32_t firstGroup, uint32_t groupCount, size_t dataSize, void *pData) const
         {
-            _table.vkGetRayTracingShaderGroupHandlesKHR(_device, pipeline, firstGroup, groupCount, dataSize, pData);
+            return _table.vkGetRayTracingShaderGroupHandlesKHR(_device, pipeline, firstGroup, groupCount, dataSize, pData);
         }
         inline VkDeviceSize GetRayTracingShaderGroupStackSizeKHR(VkPipeline pipeline, uint32_t group, VkShaderGroupShaderKHR groupShader) const
         {
-            _table.vkGetRayTracingShaderGroupStackSizeKHR(_device, pipeline, group, groupShader);
+            return _table.vkGetRayTracingShaderGroupStackSizeKHR(_device, pipeline, group, groupShader);
         }
 #endif /* defined(VK_KHR_ray_tracing_pipeline) */
 #if defined(VK_KHR_sampler_ycbcr_conversion)
         inline VkResult CreateSamplerYcbcrConversionKHR(const VkSamplerYcbcrConversionCreateInfo *pCreateInfo, const VkAllocationCallbacks *pAllocator, VkSamplerYcbcrConversion *pYcbcrConversion) const
         {
-            _table.vkCreateSamplerYcbcrConversionKHR(_device, pCreateInfo, pAllocator, pYcbcrConversion);
+            return _table.vkCreateSamplerYcbcrConversionKHR(_device, pCreateInfo, pAllocator, pYcbcrConversion);
         }
         inline void DestroySamplerYcbcrConversionKHR(VkSamplerYcbcrConversion ycbcrConversion, const VkAllocationCallbacks *pAllocator) const
         {
@@ -1297,17 +1297,17 @@ namespace VOLK_NAMESPACE
 #if defined(VK_KHR_shared_presentable_image)
         inline VkResult GetSwapchainStatusKHR(VkSwapchainKHR swapchain) const
         {
-            _table.vkGetSwapchainStatusKHR(_device, swapchain);
+            return _table.vkGetSwapchainStatusKHR(_device, swapchain);
         }
 #endif /* defined(VK_KHR_shared_presentable_image) */
 #if defined(VK_KHR_swapchain)
         inline VkResult AcquireNextImageKHR(VkSwapchainKHR swapchain, uint64_t timeout, VkSemaphore semaphore, VkFence fence, uint32_t *pImageIndex) const
         {
-            _table.vkAcquireNextImageKHR(_device, swapchain, timeout, semaphore, fence, pImageIndex);
+            return _table.vkAcquireNextImageKHR(_device, swapchain, timeout, semaphore, fence, pImageIndex);
         }
         inline VkResult CreateSwapchainKHR(const VkSwapchainCreateInfoKHR *pCreateInfo, const VkAllocationCallbacks *pAllocator, VkSwapchainKHR *pSwapchain) const
         {
-            _table.vkCreateSwapchainKHR(_device, pCreateInfo, pAllocator, pSwapchain);
+            return _table.vkCreateSwapchainKHR(_device, pCreateInfo, pAllocator, pSwapchain);
         }
         inline void DestroySwapchainKHR(VkSwapchainKHR swapchain, const VkAllocationCallbacks *pAllocator) const
         {
@@ -1315,35 +1315,35 @@ namespace VOLK_NAMESPACE
         }
         inline VkResult GetSwapchainImagesKHR(VkSwapchainKHR swapchain, uint32_t *pSwapchainImageCount, VkImage *pSwapchainImages) const
         {
-            _table.vkGetSwapchainImagesKHR(_device, swapchain, pSwapchainImageCount, pSwapchainImages);
+            return _table.vkGetSwapchainImagesKHR(_device, swapchain, pSwapchainImageCount, pSwapchainImages);
         }
         inline VkResult QueuePresentKHR(VkQueue queue, const VkPresentInfoKHR *pPresentInfo) const
         {
-            _table.vkQueuePresentKHR(queue, pPresentInfo);
+            return _table.vkQueuePresentKHR(queue, pPresentInfo);
         }
 #endif /* defined(VK_KHR_swapchain) */
 #if defined(VK_KHR_timeline_semaphore)
         inline VkResult GetSemaphoreCounterValueKHR(VkSemaphore semaphore, uint64_t *pValue) const
         {
-            _table.vkGetSemaphoreCounterValueKHR(_device, semaphore, pValue);
+            return _table.vkGetSemaphoreCounterValueKHR(_device, semaphore, pValue);
         }
         inline VkResult SignalSemaphoreKHR(const VkSemaphoreSignalInfo *pSignalInfo) const
         {
-            _table.vkSignalSemaphoreKHR(_device, pSignalInfo);
+            return _table.vkSignalSemaphoreKHR(_device, pSignalInfo);
         }
         inline VkResult WaitSemaphoresKHR(const VkSemaphoreWaitInfo *pWaitInfo, uint64_t timeout) const
         {
-            _table.vkWaitSemaphoresKHR(_device, pWaitInfo, timeout);
+            return _table.vkWaitSemaphoresKHR(_device, pWaitInfo, timeout);
         }
 #endif /* defined(VK_KHR_timeline_semaphore) */
 #if defined(VK_NVX_image_view_handle)
         inline VkResult GetImageViewAddressNVX(VkImageView imageView, VkImageViewAddressPropertiesNVX *pProperties) const
         {
-            _table.vkGetImageViewAddressNVX(_device, imageView, pProperties);
+            return _table.vkGetImageViewAddressNVX(_device, imageView, pProperties);
         }
         inline uint32_t GetImageViewHandleNVX(const VkImageViewHandleInfoNVX *pInfo) const
         {
-            _table.vkGetImageViewHandleNVX(_device, pInfo);
+            return _table.vkGetImageViewHandleNVX(_device, pInfo);
         }
 #endif /* defined(VK_NVX_image_view_handle) */
 #if defined(VK_NV_clip_space_w_scaling)
@@ -1377,7 +1377,7 @@ namespace VOLK_NAMESPACE
         }
         inline VkResult CreateIndirectCommandsLayoutNV(const VkIndirectCommandsLayoutCreateInfoNV *pCreateInfo, const VkAllocationCallbacks *pAllocator, VkIndirectCommandsLayoutNV *pIndirectCommandsLayout) const
         {
-            _table.vkCreateIndirectCommandsLayoutNV(_device, pCreateInfo, pAllocator, pIndirectCommandsLayout);
+            return _table.vkCreateIndirectCommandsLayoutNV(_device, pCreateInfo, pAllocator, pIndirectCommandsLayout);
         }
         inline void DestroyIndirectCommandsLayoutNV(VkIndirectCommandsLayoutNV indirectCommandsLayout, const VkAllocationCallbacks *pAllocator) const
         {
@@ -1391,7 +1391,7 @@ namespace VOLK_NAMESPACE
 #if defined(VK_NV_external_memory_win32)
         inline VkResult GetMemoryWin32HandleNV(VkDeviceMemory memory, VkExternalMemoryHandleTypeFlagsNV handleType, HANDLE *pHandle) const
         {
-            _table.vkGetMemoryWin32HandleNV(_device, memory, handleType, pHandle);
+            return _table.vkGetMemoryWin32HandleNV(_device, memory, handleType, pHandle);
         }
 #endif /* defined(VK_NV_external_memory_win32) */
 #if defined(VK_NV_fragment_shading_rate_enums)
@@ -1417,7 +1417,7 @@ namespace VOLK_NAMESPACE
 #if defined(VK_NV_ray_tracing)
         inline VkResult BindAccelerationStructureMemoryNV(uint32_t bindInfoCount, const VkBindAccelerationStructureMemoryInfoNV *pBindInfos) const
         {
-            _table.vkBindAccelerationStructureMemoryNV(_device, bindInfoCount, pBindInfos);
+            return _table.vkBindAccelerationStructureMemoryNV(_device, bindInfoCount, pBindInfos);
         }
         inline void CmdBuildAccelerationStructureNV(VkCommandBuffer commandBuffer, const VkAccelerationStructureInfoNV *pInfo, VkBuffer instanceData, VkDeviceSize instanceOffset, VkBool32 update, VkAccelerationStructureNV dst, VkAccelerationStructureNV src, VkBuffer scratch, VkDeviceSize scratchOffset) const
         {
@@ -1437,15 +1437,15 @@ namespace VOLK_NAMESPACE
         }
         inline VkResult CompileDeferredNV(VkPipeline pipeline, uint32_t shader) const
         {
-            _table.vkCompileDeferredNV(_device, pipeline, shader);
+            return _table.vkCompileDeferredNV(_device, pipeline, shader);
         }
         inline VkResult CreateAccelerationStructureNV(const VkAccelerationStructureCreateInfoNV *pCreateInfo, const VkAllocationCallbacks *pAllocator, VkAccelerationStructureNV *pAccelerationStructure) const
         {
-            _table.vkCreateAccelerationStructureNV(_device, pCreateInfo, pAllocator, pAccelerationStructure);
+            return _table.vkCreateAccelerationStructureNV(_device, pCreateInfo, pAllocator, pAccelerationStructure);
         }
         inline VkResult CreateRayTracingPipelinesNV(VkPipelineCache pipelineCache, uint32_t createInfoCount, const VkRayTracingPipelineCreateInfoNV *pCreateInfos, const VkAllocationCallbacks *pAllocator, VkPipeline *pPipelines) const
         {
-            _table.vkCreateRayTracingPipelinesNV(_device, pipelineCache, createInfoCount, pCreateInfos, pAllocator, pPipelines);
+            return _table.vkCreateRayTracingPipelinesNV(_device, pipelineCache, createInfoCount, pCreateInfos, pAllocator, pPipelines);
         }
         inline void DestroyAccelerationStructureNV(VkAccelerationStructureNV accelerationStructure, const VkAllocationCallbacks *pAllocator) const
         {
@@ -1453,7 +1453,7 @@ namespace VOLK_NAMESPACE
         }
         inline VkResult GetAccelerationStructureHandleNV(VkAccelerationStructureNV accelerationStructure, size_t dataSize, void *pData) const
         {
-            _table.vkGetAccelerationStructureHandleNV(_device, accelerationStructure, dataSize, pData);
+            return _table.vkGetAccelerationStructureHandleNV(_device, accelerationStructure, dataSize, pData);
         }
         inline void GetAccelerationStructureMemoryRequirementsNV(const VkAccelerationStructureMemoryRequirementsInfoNV *pInfo, VkMemoryRequirements2KHR *pMemoryRequirements) const
         {
@@ -1461,7 +1461,7 @@ namespace VOLK_NAMESPACE
         }
         inline VkResult GetRayTracingShaderGroupHandlesNV(VkPipeline pipeline, uint32_t firstGroup, uint32_t groupCount, size_t dataSize, void *pData) const
         {
-            _table.vkGetRayTracingShaderGroupHandlesNV(_device, pipeline, firstGroup, groupCount, dataSize, pData);
+            return _table.vkGetRayTracingShaderGroupHandlesNV(_device, pipeline, firstGroup, groupCount, dataSize, pData);
         }
 #endif /* defined(VK_NV_ray_tracing) */
 #if defined(VK_NV_scissor_exclusive)
@@ -1487,7 +1487,7 @@ namespace VOLK_NAMESPACE
 #if (defined(VK_EXT_full_screen_exclusive) && defined(VK_KHR_device_group)) || (defined(VK_EXT_full_screen_exclusive) && defined(VK_VERSION_1_1))
         inline VkResult GetDeviceGroupSurfacePresentModes2EXT(const VkPhysicalDeviceSurfaceInfo2KHR *pSurfaceInfo, VkDeviceGroupPresentModeFlagsKHR *pModes) const
         {
-            _table.vkGetDeviceGroupSurfacePresentModes2EXT(_device, pSurfaceInfo, pModes);
+            return _table.vkGetDeviceGroupSurfacePresentModes2EXT(_device, pSurfaceInfo, pModes);
         }
 #endif /* (defined(VK_EXT_full_screen_exclusive) && defined(VK_KHR_device_group)) || (defined(VK_EXT_full_screen_exclusive) && defined(VK_VERSION_1_1)) */
 #if (defined(VK_KHR_descriptor_update_template) && defined(VK_KHR_push_descriptor)) || (defined(VK_KHR_push_descriptor) && defined(VK_VERSION_1_1)) || (defined(VK_KHR_push_descriptor) && defined(VK_KHR_descriptor_update_template))
@@ -1499,17 +1499,17 @@ namespace VOLK_NAMESPACE
 #if (defined(VK_KHR_device_group) && defined(VK_KHR_surface)) || (defined(VK_KHR_swapchain) && defined(VK_VERSION_1_1))
         inline VkResult GetDeviceGroupPresentCapabilitiesKHR(VkDeviceGroupPresentCapabilitiesKHR *pDeviceGroupPresentCapabilities) const
         {
-            _table.vkGetDeviceGroupPresentCapabilitiesKHR(_device, pDeviceGroupPresentCapabilities);
+            return _table.vkGetDeviceGroupPresentCapabilitiesKHR(_device, pDeviceGroupPresentCapabilities);
         }
         inline VkResult GetDeviceGroupSurfacePresentModesKHR(VkSurfaceKHR surface, VkDeviceGroupPresentModeFlagsKHR *pModes) const
         {
-            _table.vkGetDeviceGroupSurfacePresentModesKHR(_device, surface, pModes);
+            return _table.vkGetDeviceGroupSurfacePresentModesKHR(_device, surface, pModes);
         }
 #endif /* (defined(VK_KHR_device_group) && defined(VK_KHR_surface)) || (defined(VK_KHR_swapchain) && defined(VK_VERSION_1_1)) */
 #if (defined(VK_KHR_device_group) && defined(VK_KHR_swapchain)) || (defined(VK_KHR_swapchain) && defined(VK_VERSION_1_1))
         inline VkResult AcquireNextImage2KHR(const VkAcquireNextImageInfoKHR *pAcquireInfo, uint32_t *pImageIndex) const
         {
-            _table.vkAcquireNextImage2KHR(_device, pAcquireInfo, pImageIndex);
+            return _table.vkAcquireNextImage2KHR(_device, pAcquireInfo, pImageIndex);
         }
 #endif /* (defined(VK_KHR_device_group) && defined(VK_KHR_swapchain)) || (defined(VK_KHR_swapchain) && defined(VK_VERSION_1_1)) */
         /* VOLK_GENERATE_DEVICE_METHOD_HPP */
