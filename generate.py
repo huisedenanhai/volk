@@ -64,11 +64,10 @@ def get_param_declare(param):
     return ((param.text or '') + ty.text + (ty.tail or ' ') + name.text + (name.tail or '')).strip()
 
 
-def cpp_method(cmd):
+def cpp_method(name, cmd):
     args = [(get_param_declare(a), a.findtext('name'))
             for a in cmd.findall('param')]
     ret_val = cmd.findtext('proto/type')
-    name = cmd.findtext('proto/name')
 
     first_arg_type = cmd.findtext('param[1]/type')
     if first_arg_type == 'VkDevice':
@@ -186,7 +185,7 @@ if __name__ == "__main__":
                 blocks['DEVICE_TABLE'] += '\tPFN_' + name + ' ' + name + ';\n'
                 blocks['LOAD_DEVICE_TABLE'] += '\ttable->' + name + \
                     ' = (PFN_' + name + ')load(context, "' + name + '");\n'
-                blocks['DEVICE_METHOD_HPP'] += cpp_method(cmd)
+                blocks['DEVICE_METHOD_HPP'] += cpp_method(name, cmd)
             elif is_descendant_type(types, type, 'VkInstance'):
                 blocks['LOAD_INSTANCE'] += '\t' + name + \
                     ' = (PFN_' + name + ')load(context, "' + name + '");\n'
