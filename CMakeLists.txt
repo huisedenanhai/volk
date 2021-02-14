@@ -4,7 +4,7 @@ cmake_policy(SET CMP0048 NEW) # project(... VERSION ...) support
 
 project(volk VERSION 
 # VOLK_GENERATE_VERSION
-165
+169
 # VOLK_GENERATE_VERSION
   LANGUAGES C
 )
@@ -24,7 +24,7 @@ endif()
 # -----------------------------------------------------
 # Static library
 
-add_library(volk STATIC volk.h volk.c)
+add_library(volk STATIC volk.h volk.c volk.hpp)
 target_include_directories(volk PUBLIC
   $<BUILD_INTERFACE:${CMAKE_CURRENT_LIST_DIR}>
   $<INSTALL_INTERFACE:include>
