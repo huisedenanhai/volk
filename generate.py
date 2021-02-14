@@ -94,14 +94,15 @@ if __name__ == "__main__":
     spec = parse_xml(specpath)
 
     block_keys = ('DEVICE_TABLE', 'PROTOTYPES_H', 'PROTOTYPES_C', 'LOAD_LOADER',
-                  'LOAD_INSTANCE', 'LOAD_DEVICE', 'LOAD_DEVICE_TABLE', 'DEVICE_METHOD_HPP')
+                  'LOAD_INSTANCE', 'LOAD_DEVICE', 'LOAD_DEVICE_TABLE', 'DEVICE_METHOD_HPP',
+                  'DEVICE_PROTOTYPES_H', 'DEVICE_PROTOTYPES_C')
 
     blocks = {}
 
     version = spec.find('types/type[name="VK_HEADER_VERSION"]')
     blocks['VERSION'] = version.find('name').tail.strip() + '\n'
     blocks['VERSION_DEFINE'] = '#define VOLK_HEADER_VERSION ' + \
-        version.find('name').tail.strip() + '\n'
+                               version.find('name').tail.strip() + '\n'
 
     command_groups = OrderedDict()
     instance_commands = set()
@@ -182,22 +183,25 @@ if __name__ == "__main__":
             if name == 'vkGetDeviceProcAddr':
                 type = 'VkInstance'
 
-            if is_descendant_type(types, type, 'VkDevice') and name not in instance_commands:
+            is_device_command = is_descendant_type(types, type, 'VkDevice') and name not in instance_commands
+
+            if is_device_command:
                 blocks['LOAD_DEVICE'] += '\t' + name + \
-                    ' = (PFN_' + name + ')load(context, "' + name + '");\n'
+                                         ' = (PFN_' + name + ')load(context, "' + name + '");\n'
                 blocks['DEVICE_TABLE'] += '\tPFN_' + name + ' ' + name + ';\n'
                 blocks['LOAD_DEVICE_TABLE'] += '\ttable->' + name + \
-                    ' = (PFN_' + name + ')load(context, "' + name + '");\n'
+                                               ' = (PFN_' + name + ')load(context, "' + name + '");\n'
                 blocks['DEVICE_METHOD_HPP'] += cpp_method(name, cmd)
             elif is_descendant_type(types, type, 'VkInstance'):
                 blocks['LOAD_INSTANCE'] += '\t' + name + \
-                    ' = (PFN_' + name + ')load(context, "' + name + '");\n'
+                                           ' = (PFN_' + name + ')load(context, "' + name + '");\n'
             elif type != '':
                 blocks['LOAD_LOADER'] += '\t' + name + \
-                    ' = (PFN_' + name + ')load(context, "' + name + '");\n'
+                                         ' = (PFN_' + name + ')load(context, "' + name + '");\n'
 
-            blocks['PROTOTYPES_H'] += 'extern PFN_' + name + ' ' + name + ';\n'
-            blocks['PROTOTYPES_C'] += 'PFN_' + name + ' ' + name + ';\n'
+            blocks[
+                'DEVICE_PROTOTYPES_H' if is_device_command else 'PROTOTYPES_H'] += 'extern PFN_' + name + ' ' + name + ';\n'
+            blocks['DEVICE_PROTOTYPES_C' if is_device_command else 'PROTOTYPES_C'] += 'PFN_' + name + ' ' + name + ';\n'
 
         for key in block_keys:
             if blocks[key].endswith(ifdef):
