@@ -64,15 +64,15 @@ def get_param_declare(param):
     return ((param.text or '') + ty.text + (ty.tail or ' ') + name.text + (name.tail or '')).strip()
 
 
-def cpp_method(name, cmd):
+def cpp_method(type, member, name, cmd):
     args = [(get_param_declare(a), a.findtext('name'))
             for a in cmd.findall('param')]
     ret_val = cmd.findtext('proto/type').strip()
 
     first_arg_type = cmd.findtext('param[1]/type')
-    if first_arg_type == 'VkDevice':
+    if first_arg_type == type:
         declare = ', '.join([a[0] for a in args[1:]])
-        call = ', '.join(['_device'] + [a[1] for a in args[1:]])
+        call = ', '.join([member] + [a[1] for a in args[1:]])
     else:
         declare = ', '.join([a[0] for a in args])
         call = ', '.join([a[1] for a in args])
@@ -93,8 +93,10 @@ if __name__ == "__main__":
 
     spec = parse_xml(specpath)
 
-    block_keys = ('DEVICE_TABLE', 'PROTOTYPES_H', 'PROTOTYPES_C', 'LOAD_LOADER',
-                  'LOAD_INSTANCE', 'LOAD_DEVICE', 'LOAD_DEVICE_TABLE', 'DEVICE_METHOD_HPP',
+    block_keys = ('DEVICE_TABLE', 'INSTANCE_TABLE', 'PROTOTYPES_H', 'PROTOTYPES_C',
+                  'INSTANCE_PROTOTYPES_H', 'INSTANCE_PROTOTYPES_C', 'LOAD_LOADER', 'LOAD_INSTANCE',
+                  'LOAD_DEVICE', 'LOAD_DEVICE_TABLE', 'LOAD_INSTANCE_TABLE',
+                  'DEVICE_METHOD_HPP', 'INSTANCE_METHOD_HPP',
                   'DEVICE_PROTOTYPES_H', 'DEVICE_PROTOTYPES_C')
 
     blocks = {}
@@ -184,6 +186,7 @@ if __name__ == "__main__":
                 type = 'VkInstance'
 
             is_device_command = is_descendant_type(types, type, 'VkDevice') and name not in instance_commands
+            is_instance_command = is_descendant_type(types, type, 'VkInstance')
 
             if is_device_command:
                 blocks['LOAD_DEVICE'] += '\t' + name + \
@@ -191,17 +194,21 @@ if __name__ == "__main__":
                 blocks['DEVICE_TABLE'] += '\tPFN_' + name + ' ' + name + ';\n'
                 blocks['LOAD_DEVICE_TABLE'] += '\ttable->' + name + \
                                                ' = (PFN_' + name + ')load(context, "' + name + '");\n'
-                blocks['DEVICE_METHOD_HPP'] += cpp_method(name, cmd)
-            elif is_descendant_type(types, type, 'VkInstance'):
+                blocks['DEVICE_METHOD_HPP'] += cpp_method('VkDevice', '_device', name, cmd)
+            elif is_instance_command:
                 blocks['LOAD_INSTANCE'] += '\t' + name + \
                                            ' = (PFN_' + name + ')load(context, "' + name + '");\n'
+                blocks['INSTANCE_TABLE'] += '\tPFN_' + name + ' ' + name + ';\n'
+                blocks['LOAD_INSTANCE_TABLE'] += '\ttable->' + name + \
+                                                 ' = (PFN_' + name + ')load(context, "' + name + '");\n'
+                blocks['INSTANCE_METHOD_HPP'] += cpp_method('VkInstance', '_instance', name, cmd)
             elif type != '':
                 blocks['LOAD_LOADER'] += '\t' + name + \
                                          ' = (PFN_' + name + ')load(context, "' + name + '");\n'
 
-            blocks[
-                'DEVICE_PROTOTYPES_H' if is_device_command else 'PROTOTYPES_H'] += 'extern PFN_' + name + ' ' + name + ';\n'
-            blocks['DEVICE_PROTOTYPES_C' if is_device_command else 'PROTOTYPES_C'] += 'PFN_' + name + ' ' + name + ';\n'
+            proto = 'DEVICE_PROTOTYPES' if is_device_command else 'INSTANCE_PROTOTYPES' if is_instance_command else 'PROTOTYPES'
+            blocks[proto + '_H'] += 'extern PFN_' + name + ' ' + name + ';\n'
+            blocks[proto + '_C'] += 'PFN_' + name + ' ' + name + ';\n'
 
         for key in block_keys:
             if blocks[key].endswith(ifdef):
