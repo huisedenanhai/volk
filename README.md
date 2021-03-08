@@ -8,6 +8,11 @@ Vulkan entrypoints directly from the driver which can increase performance by sk
 
 volk is written in C89 and supports Windows, Linux, Android and macOS (via MoltenVK).
 
+## Difference From the [Original Repo](https://github.com/zeux/volk)
+
++ Options for disabling global device function pointers (`VOLK_NO_DEVICE_PROTOTYPES`) and global instance function pointers (`VOLK_NO_INSTANCE_PROTOTYPES`).
++ Simple C++ wrapper for VkDevice (see `volk.hpp`).
+
 ## Building
 
 There are multiple ways to use volk in your project:
